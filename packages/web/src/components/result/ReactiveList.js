@@ -525,7 +525,7 @@ class ReactiveList extends Component {
 	loadMore = () => {
 		if (this.props.aggregationField && !this.props.afterKey) return;
 		if (this.props.hits && this.props.total !== this.props.hits.length) {
-			const value = this.state.from + this.props.size;
+			const value = this.props.hits.length;
 			const options = { ...getQueryOptions(this.props), ...this.getAggsQuery() };
 			this.setState({
 				from: value,
